@@ -6,6 +6,7 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 @Data
 @Service
@@ -18,8 +19,8 @@ public class EmployeeService {
         return employeeRepository.findById(id);
     }
 
-    public Iterable<Employee> getEmployees(){
-        return employeeRepository.findAll();
+    public List<Employee> getEmployees(){
+        return (List) employeeRepository.findAll();
     }
 
     public Employee saveEmployee(Employee employee){
